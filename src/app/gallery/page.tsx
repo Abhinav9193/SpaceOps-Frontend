@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import api from '@/lib/api';
+import api, { getBackendOrigin } from '@/lib/api';
 import { X, ZoomIn, Filter, User, Globe, Rocket } from 'lucide-react';
 
 interface UnifiedImage {
@@ -58,7 +58,7 @@ export default function GalleryPage() {
                     imageUrl: img.imageUrl && img.imageUrl.startsWith('http')
                         ? img.imageUrl
                         : img.imageUrl
-                            ? `http://localhost:8080${img.imageUrl}`
+                            ? `${getBackendOrigin()}${img.imageUrl}`
                             : '/placeholder-space.jpg',
                     source: 'Community',
                     uploaderName: img.uploaderName || 'Anonymous',

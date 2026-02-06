@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import api from '@/lib/api';
+import api, { getBackendOrigin } from '@/lib/api';
 import { User, Calendar, ZoomIn, X } from 'lucide-react';
 import Link from 'next/link';
 
@@ -76,7 +76,7 @@ export default function CommunityImagesPage() {
                         >
                             <div className="image-zoom relative">
                                 <img
-                                    src={`http://localhost:8080${image.imageUrl}`}
+                                    src={`${getBackendOrigin()}${image.imageUrl}`}
                                     alt={image.title}
                                     className="w-full h-auto object-cover"
                                 />
@@ -120,7 +120,7 @@ export default function CommunityImagesPage() {
                                 <X className="w-6 h-6" />
                             </button>
                             <img
-                                src={`http://localhost:8080${selectedImage.imageUrl}`}
+                                src={`${getBackendOrigin()}${selectedImage.imageUrl}`}
                                 alt={selectedImage.title}
                                 className="w-full h-auto"
                             />

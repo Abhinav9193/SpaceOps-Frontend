@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import api from '@/lib/api';
+import api, { getBackendOrigin } from '@/lib/api';
 import Link from 'next/link';
 import { ArrowRight, Rocket, Image as ImageIcon, Newspaper, Calendar, Zap, Users, Telescope } from 'lucide-react';
 import VideoBackground from '@/components/VideoBackground';
@@ -84,7 +84,7 @@ export default function HomePage() {
           imageUrl: img.imageUrl && img.imageUrl.startsWith('http')
             ? img.imageUrl
             : img.imageUrl
-              ? `http://localhost:8080${img.imageUrl}`
+              ? `${getBackendOrigin()}${img.imageUrl}`
               : '/placeholder-space.jpg',
           description: img.description || '',
           isCommunity: true
