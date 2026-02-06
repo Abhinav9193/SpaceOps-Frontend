@@ -220,7 +220,7 @@ export default function HomePage() {
                 </div>
                 <h2 className="text-4xl font-bold gradient-text-galaxy">Direct Mission Intel</h2>
               </div>
-              <p className="text-2xl text-gray-300 leading-relaxed font-light italic">"{aiSummary.summary}"</p>
+              <p className="text-2xl text-gray-300 leading-relaxed font-light italic">&quot;{aiSummary.summary}&quot;</p>
               <div className="mt-8 flex items-center justify-between text-sm text-gray-400 border-t border-white/10 pt-6">
                 <span>SpaceOps AI Terminal v4.2.0</span>
                 <span>{currentDate}</span>
