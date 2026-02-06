@@ -116,7 +116,7 @@ export default function Dashboard() {
                             <h2 className="text-lg font-bold uppercase tracking-wider">AI Insight</h2>
                         </div>
                         <p className="text-sm text-slate-300 leading-relaxed italic">
-                            "{aiSummary}"
+                            &quot;{aiSummary}&quot;
                         </p>
                         <div className="mt-auto pt-4 border-t border-white/5 flex justify-between items-center text-[10px]">
                             <span className="text-blue-400">ENGINE: SPRING-AI-OPENAI</span>
